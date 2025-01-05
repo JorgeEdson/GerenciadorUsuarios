@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.1738743">
+  <PropertyGroup>
+    <StartupCommand>npm run dev</StartupCommand>
+    <JavaScriptTestRoot>src\</JavaScriptTestRoot>
+    <JavaScriptTestFramework>Jest</JavaScriptTestFramework>
+    <!-- Allows the build (or compile) script located on package.json to run on Build -->
+    <ShouldRunBuildScript>false</ShouldRunBuildScript>
+    <!-- Folder where production build objects will be placed -->
+    <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
+  </PropertyGroup>
+  <Target Name="EnsurePnpmInstalled" BeforeTargets="BeforeBuild;BeforePublish" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules')">
+    <Exec Command="npm install -g pnpm" />
+  </Target>
+  <Target Name="InstallDependencies" BeforeTargets="BeforeBuild;BeforePublish" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules')">
+    <Exec Command="pnpm install" />
+  </Target>
+</Project>
