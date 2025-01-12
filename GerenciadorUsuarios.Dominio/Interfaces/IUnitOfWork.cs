@@ -9,5 +9,6 @@ namespace GerenciadorUsuarios.Dominio.Interfaces
         Task RemoverAsync<T>(T entidade) where T : EntidadeBase;
         Task<T?> ObterPorIdAsync<T>(Guid id) where T : EntidadeBase;
         Task<IEnumerable<T>> ObterTodosAsync<T>() where T : EntidadeBase;
+        Task<int> SalvarAlteracoesAsync(CancellationToken cancellationToken = default);
     }
 }
