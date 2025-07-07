@@ -20,7 +20,6 @@ namespace GerenciadorUsuarios.Infraestrutura.Entity
             await _contexto.Set<T>().AddAsync(entidade);
         }
 
-        public Task<Documento?> ObterDocumentoPorNumeroTipoAsync(TipoDocumento tipo, string numero)
         {
             throw new NotImplementedException();
         }
