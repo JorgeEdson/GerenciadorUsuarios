@@ -8,7 +8,7 @@ namespace GerenciadorUsuarios.Dominio.Entidades
         #region Propriedades
         public TipoDocumento TipoDocumento { get; private set; }
         public string Valor { get; private set; }
-        public Guid IdUsuario { get; private set; }
+        public long IdUsuario { get; private set; }
         public Usuario Usuario { get; private set; }
         #endregion
 

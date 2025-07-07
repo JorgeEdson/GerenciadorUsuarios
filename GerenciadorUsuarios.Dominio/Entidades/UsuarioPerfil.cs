@@ -5,9 +5,9 @@ namespace GerenciadorUsuarios.Dominio.Entidades
     public class UsuarioPerfil : EntidadeBase
     {
         #region Propriedades
-        public Guid IdUsuario { get; private set; }
+        public long IdUsuario { get; private set; }
         public Usuario Usuario { get; private set; }
-        public Guid IdPerfil { get; private set; }
+        public long IdPerfil { get; private set; }
         public Perfil Perfil { get; private set; }
         public bool Ativo { get; private set; }
         #endregion

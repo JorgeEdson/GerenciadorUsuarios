@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace GerenciadorUsuarios.Infraestrutura.Migrations
 {
     /// <inheritdoc />
-    public partial class migration1 : Migration
+    public partial class Migration1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,7 +14,7 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
                 name: "Perfis",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<long>(type: "bigint", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
@@ -27,15 +26,15 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
                 name: "Usuarios",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<long>(type: "bigint", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     Senha = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Endereco = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Telefone = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     Ativo = table.Column<bool>(type: "bit", nullable: false),
-                    IdDocumento = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    IdFotoUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    IdDocumento = table.Column<long>(type: "bigint", nullable: true),
+                    IdFotoUsuario = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -46,9 +45,9 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
                 name: "Permissoes",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IdPerfil = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PerfilId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    IdPerfil = table.Column<long>(type: "bigint", nullable: false),
+                    PerfilId = table.Column<long>(type: "bigint", nullable: false),
                     Valor = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -66,10 +65,10 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
                 name: "Documentos",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<long>(type: "bigint", nullable: false),
                     TipoDocumento = table.Column<int>(type: "int", nullable: false),
                     Valor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IdUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    IdUsuario = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -86,8 +85,8 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
                 name: "Fotos",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IdUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    IdUsuario = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -104,11 +103,11 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
                 name: "UsuariosPerfis",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IdUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UsuarioId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IdPerfil = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PerfilId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    IdUsuario = table.Column<long>(type: "bigint", nullable: false),
+                    UsuarioId = table.Column<long>(type: "bigint", nullable: false),
+                    IdPerfil = table.Column<long>(type: "bigint", nullable: false),
+                    PerfilId = table.Column<long>(type: "bigint", nullable: false),
                     Ativo = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>

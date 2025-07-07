@@ -1,9 +1,11 @@
-﻿namespace GerenciadorUsuarios.Dominio.Entidades
+﻿using GerenciadorUsuarios.Dominio.Utils;
+
+namespace GerenciadorUsuarios.Dominio.Entidades
 {
     public class EntidadeBase
     {
         #region Propriedades
-        public Guid Id { get; private set; }
+        public long Id { get; private set; }
         #endregion
 
         #region Metodos Privados
@@ -12,7 +14,7 @@
         #region Construtores
         protected EntidadeBase()
         {
-            Id = Guid.NewGuid();
+            Id = GeradorIdUtil.ProximoId();
         }
         #endregion
 

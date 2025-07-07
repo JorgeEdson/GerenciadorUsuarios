@@ -11,6 +11,7 @@ namespace GerenciadorUsuarios.Infraestrutura.Mapeamentos
         {
             #region Chave Primária
             builder.HasKey(permissao => permissao.Id);
+            builder.Property(permissao => permissao.Id).ValueGeneratedNever();
             #endregion
 
             #region Colunas Obrigatorias            

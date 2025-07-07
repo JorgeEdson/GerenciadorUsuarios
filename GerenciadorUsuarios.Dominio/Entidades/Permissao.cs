@@ -7,7 +7,7 @@ namespace GerenciadorUsuarios.Dominio.Entidades
     public class Permissao : EntidadeBase
     {
         #region Propriedades
-        public Guid IdPerfil { get; set; }
+        public long IdPerfil { get; set; }
         public Perfil Perfil { get; set; }
         public Regra Valor { get; set; }
 

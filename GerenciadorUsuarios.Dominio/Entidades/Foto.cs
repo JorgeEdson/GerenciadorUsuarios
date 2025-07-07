@@ -6,7 +6,7 @@ namespace GerenciadorUsuarios.Dominio.Entidades
     public class Foto : EntidadeBase
     {
         #region Propriedades
-        public Guid IdUsuario { get; private set; }
+        public long IdUsuario { get; private set; }
         public Usuario Usuario { get; private set; }
         #endregion
 

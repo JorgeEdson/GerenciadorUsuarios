@@ -10,6 +10,7 @@ namespace GerenciadorUsuarios.Infraestrutura.Mapeamentos
         {
             #region Chave Primária
             builder.HasKey(perfil => perfil.Id);
+            builder.Property(perfil => perfil.Id).ValueGeneratedNever();
             #endregion
 
             #region Colunas Obrigatorias

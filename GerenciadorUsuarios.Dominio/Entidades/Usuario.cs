@@ -17,9 +17,9 @@ namespace GerenciadorUsuarios.Dominio.Entidades
         public string Endereco { get; private set; }
         public string Telefone { get; private set; }
         public bool Ativo { get; private set; }
-        public Guid? IdDocumento { get; private set; }
+        public long? IdDocumento { get; private set; }
         public Documento? Documento { get; private set; }
-        public Guid? IdFotoUsuario { get; private set; }
+        public long? IdFotoUsuario { get; private set; }
         public Foto? Foto { get; private set; }
         #endregion
 

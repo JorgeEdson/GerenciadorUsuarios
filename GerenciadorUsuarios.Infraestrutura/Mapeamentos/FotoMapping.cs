@@ -10,6 +10,7 @@ namespace GerenciadorUsuarios.Infraestrutura.Mapeamentos
         {
             #region Chave Primária
             builder.HasKey(foto => foto.Id);
+            builder.Property(foto => foto.Id).ValueGeneratedNever();
             #endregion
 
         }

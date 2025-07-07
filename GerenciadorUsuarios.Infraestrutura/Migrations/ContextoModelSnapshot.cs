@@ -24,12 +24,11 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
 
             modelBuilder.Entity("GerenciadorUsuarios.Dominio.Entidades.Documento", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
 
-                    b.Property<Guid>("IdUsuario")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("IdUsuario")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("TipoDocumento")
                         .HasColumnType("int");
@@ -48,12 +47,11 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
 
             modelBuilder.Entity("GerenciadorUsuarios.Dominio.Entidades.Foto", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
 
-                    b.Property<Guid>("IdUsuario")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("IdUsuario")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
@@ -65,9 +63,8 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
 
             modelBuilder.Entity("GerenciadorUsuarios.Dominio.Entidades.Perfil", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -81,15 +78,14 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
 
             modelBuilder.Entity("GerenciadorUsuarios.Dominio.Entidades.Permissao", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
 
-                    b.Property<Guid>("IdPerfil")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("IdPerfil")
+                        .HasColumnType("bigint");
 
-                    b.Property<Guid>("PerfilId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("PerfilId")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("Valor")
                         .HasColumnType("int");
@@ -103,9 +99,8 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
 
             modelBuilder.Entity("GerenciadorUsuarios.Dominio.Entidades.Usuario", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("Ativo")
                         .HasColumnType("bit");
@@ -119,11 +114,11 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("IdDocumento")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long?>("IdDocumento")
+                        .HasColumnType("bigint");
 
-                    b.Property<Guid?>("IdFotoUsuario")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long?>("IdFotoUsuario")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -150,24 +145,23 @@ namespace GerenciadorUsuarios.Infraestrutura.Migrations
 
             modelBuilder.Entity("GerenciadorUsuarios.Dominio.Entidades.UsuarioPerfil", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("Ativo")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("IdPerfil")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("IdPerfil")
+                        .HasColumnType("bigint");
 
-                    b.Property<Guid>("IdUsuario")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("IdUsuario")
+                        .HasColumnType("bigint");
 
-                    b.Property<Guid>("PerfilId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("PerfilId")
+                        .HasColumnType("bigint");
 
-                    b.Property<Guid>("UsuarioId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<long>("UsuarioId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 

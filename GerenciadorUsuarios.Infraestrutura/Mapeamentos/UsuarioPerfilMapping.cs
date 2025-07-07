@@ -1,11 +1,6 @@
 ﻿using GerenciadorUsuarios.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GerenciadorUsuarios.Infraestrutura.Mapeamentos
 {
@@ -15,6 +10,7 @@ namespace GerenciadorUsuarios.Infraestrutura.Mapeamentos
         {
             #region Chave Primária
             builder.HasKey(usuarioPerfil => usuarioPerfil.Id);
+            builder.Property(usuarioPerfil => usuarioPerfil.Id).ValueGeneratedNever();
             #endregion
 
         }
